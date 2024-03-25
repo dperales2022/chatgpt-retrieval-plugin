@@ -5,7 +5,7 @@ from loguru import logger
 
 from tenacity import retry, wait_random_exponential, stop_after_attempt
 
-EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "text-embedding-3-large")
+EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "text-embedding-3-small")
 
 
 @retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(3))
